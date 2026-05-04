@@ -3,61 +3,70 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maison Estrada | Fine Dining</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"><style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"><style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Montserrat',sans-serif;background:#0b0b0b;color:#fff;scroll-behavior:smooth}
-nav{position:fixed;top:0;width:100%;background:rgba(0,0,0,.85);display:flex;justify-content:center;gap:25px;padding:12px;z-index:1000}
-nav a{color:#d4af37;text-decoration:none;font-size:14px}
+nav{position:fixed;top:0;width:100%;background:rgba(0,0,0,.9);display:flex;justify-content:center;gap:30px;padding:15px;z-index:1000}
+nav a{color:#d4af37;text-decoration:none;font-size:14px;transition:.3s}
+nav a:hover{color:#fff}
 header{height:100vh;background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0');background-size:cover;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
-h1{font-family:'Playfair Display',serif;color:#d4af37;font-size:4rem}
-.btn{margin:10px;padding:12px 25px;border:1px solid #d4af37;background:none;color:#d4af37;cursor:pointer}
+.logo{font-family:'Playfair Display',serif;font-size:5rem;color:#d4af37;letter-spacing:3px}
+.sub{margin-top:10px;color:#ccc;font-size:1.2rem}
+.btn{margin:10px;padding:12px 28px;border:1px solid #d4af37;background:none;color:#d4af37;cursor:pointer;transition:.3s}
 .btn:hover{background:#d4af37;color:#000}
-section{padding:90px 10%}
-h2{color:#d4af37;margin-bottom:20px}
-.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.card{background:#111;padding:15px;border-radius:10px;transition:.3s}
-.card:hover{transform:scale(1.05)}
-.card img{width:100%}
-.price{color:#d4af37}
-#filtro{padding:10px;width:100%;margin-bottom:20px}
-#carrito{background:#111;padding:15px;margin-top:20px;border-radius:10px}
-form input{width:100%;padding:10px;margin:10px 0;background:#111;border:none;color:#fff}
-form button{width:100%;padding:10px;background:#d4af37;border:none;cursor:pointer}
-.fade{opacity:0;transform:translateY(30px);transition:1s}
+section{padding:100px 10%}
+h2{color:#d4af37;margin-bottom:25px;font-size:2.2rem}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
+.card{background:#111;padding:15px;border-radius:12px;transition:.3s}
+.card:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(212,175,55,.3)}
+.card img{width:100%;border-radius:10px}
+.price{color:#d4af37;font-weight:bold}
+#filtro{padding:12px;width:100%;margin-bottom:25px;border-radius:8px;border:none}
+#carrito{background:#111;padding:20px;margin-top:25px;border-radius:12px}
+form input{width:100%;padding:12px;margin:10px 0;background:#111;border:none;color:#fff;border-radius:6px}
+form button{width:100%;padding:12px;background:#d4af37;border:none;cursor:pointer;border-radius:6px}
+.fade{opacity:0;transform:translateY(40px);transition:1s}
 .show{opacity:1;transform:translateY(0)}
-footer{text-align:center;padding:20px;background:#000;color:#777}
+.galeria{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
+.galeria img{width:100%;height:220px;object-fit:cover;border-radius:10px}
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);display:none;justify-content:center;align-items:center}
+.ticket{background:#111;padding:25px;border-radius:12px;width:320px;text-align:center}
+footer{text-align:center;padding:25px;background:#000;color:#777}
+
+@media(max-width:600px){
+.logo{font-size:3rem}
+}
 </style></head><body><nav>
 <a href="#">Inicio</a>
 <a href="#menu">Menú</a>
+<a href="#galeria">Galería</a>
 <a href="#reserva">Reservas</a>
-<a href="#contacto">Contacto</a>
 </nav><header>
+<div class="logo">ME</div>
 <h1>Maison Estrada</h1>
-<p>Experiencia Michelin en cada detalle</p>
+<p class="sub">Experiencia Michelin · Lujo · Exclusividad</p>
 <button class="btn" onclick="scrollToSection('menu')">Explorar Menú</button>
-<button class="btn" onclick="scrollToSection('reserva')">Reservar Mesa</button>
+<button class="btn" onclick="scrollToSection('reserva')">Reservar</button>
 </header><section id="menu" class="fade">
-<h2>Menú</h2>
+<h2>Menú Gourmet</h2>
 <input id="filtro" placeholder="Buscar platillo..." onkeyup="filtrar()">
 <div class="menu">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
-<h3>Wagyu Premium</h3>
-<p class="price">$45</p>
-<button onclick="agregarCarrito('Wagyu',45)">Agregar</button>
-</div>
-<div class="card">
-<img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe">
-<h3>Pasta Trufa</h3>
-<p class="price">$30</p>
-<button onclick="agregarCarrito('Pasta',30)">Agregar</button>
-</div>
+<div class="card"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"><h3>Wagyu Premium</h3><p class="price">$45</p><button onclick="agregarCarrito('Wagyu',45)">Agregar</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe"><h3>Pasta Trufa</h3><p class="price">$30</p><button onclick="agregarCarrito('Pasta',30)">Agregar</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1559847844-5315695dadae"><h3>Salmón Gourmet</h3><p class="price">$28</p><button onclick="agregarCarrito('Salmón',28)">Agregar</button></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061"><h3>Postre Deluxe</h3><p class="price">$15</p><button onclick="agregarCarrito('Postre',15)">Agregar</button></div>
 </div><div id="carrito">
 <h3>Carrito 🛒</h3>
 <ul id="lista"></ul>
 <p>Total: $<span id="total">0</span></p>
-<button onclick="pagar()">Pagar</button>
-<button onclick="generarTicket()">Generar Ticket</button>
+<button onclick="mostrarTicket()">Ver Ticket</button>
+</div>
+</section><section id="galeria" class="fade">
+<h2>Galería</h2>
+<div class="galeria">
+<img src="https://images.unsplash.com/photo-1551218808-94e220e084d2">
+<img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1">
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
 </div>
 </section><section id="reserva" class="fade">
 <h2>Reservación</h2>
@@ -69,65 +78,18 @@ footer{text-align:center;padding:20px;background:#000;color:#777}
 <button>Confirmar</button>
 </form>
 <p id="mensaje"></p>
-</section><section id="contacto" class="fade">
-<h2>Contacto</h2>
-<p>📞 +502 1234 5678</p>
-<p>✉️ reservas@maisonestrada.com</p>
 </section><footer>
-<p>© 2026 Maison Estrada | Alta Cocina</p>
-</footer><script>
-let total=0;
-let items=[];
-
-function agregarCarrito(nombre,precio){
-items.push({nombre,precio});
-let lista=document.getElementById('lista');
-let item=document.createElement('li');
-item.textContent=nombre+' - $'+precio;
-lista.appendChild(item);
-total+=precio;
-document.getElementById('total').textContent=total;
-}
-
-function pagar(){
-if(total===0){alert('Carrito vacío');return}
-alert('💳 Pago exitoso');
-total=0;items=[];
-document.getElementById('lista').innerHTML='';
-document.getElementById('total').textContent=0;
-}
-
-function generarTicket(){
-if(items.length===0){alert('No hay productos');return}
-let ticket='--- TICKET ---\n';
-items.forEach(i=>ticket+=i.nombre+' $'+i.precio+'\n');
-ticket+='Total: $'+total;
-alert(ticket);
-}
-
-function reservar(e){
-e.preventDefault();
-document.getElementById('mensaje').textContent='✅ Reservación confirmada';
-}
-
-function scrollToSection(id){
-document.getElementById(id).scrollIntoView({behavior:'smooth'});
-}
-
-function filtrar(){
-let input=document.getElementById('filtro').value.toLowerCase();
-let cards=document.querySelectorAll('.card');
-cards.forEach(card=>{
-let texto=card.innerText.toLowerCase();
-card.style.display=texto.includes(input)?'block':'none';
-});
-}
-
-window.addEventListener('scroll',()=>{
-document.querySelectorAll('.fade').forEach(el=>{
-let top=el.getBoundingClientRect().top;
-if(top<window.innerHeight-100){el.classList.add('show');}
-});
-});
+<p>© 2026 Maison Estrada | Experiencia Premium</p>
+</footer><div class="modal" id="modal">
+<div class="ticket" id="ticket"></div>
+</div><script>
+let total=0;let items=[];
+function agregarCarrito(n,p){items.push({n,p});let l=document.getElementById('lista');let i=document.createElement('li');i.textContent=n+' - $'+p;l.appendChild(i);total+=p;document.getElementById('total').textContent=total}
+function mostrarTicket(){if(items.length===0){alert('No hay productos');return}let t='<h3>Maison Estrada</h3>';items.forEach(i=>t+=i.n+' $'+i.p+'<br>');t+='<hr>Total: $'+total;document.getElementById('ticket').innerHTML=t;document.getElementById('modal').style.display='flex'}
+document.getElementById('modal').onclick=function(){this.style.display='none'};
+function reservar(e){e.preventDefault();document.getElementById('mensaje').textContent='✅ Reservación confirmada'}
+function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function filtrar(){let input=document.getElementById('filtro').value.toLowerCase();document.querySelectorAll('.card').forEach(c=>{c.style.display=c.innerText.toLowerCase().includes(input)?'block':'none'})}
+window.addEventListener('scroll',()=>{document.querySelectorAll('.fade').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight-100){el.classList.add('show')}})})
 </script></body>
 </html>
