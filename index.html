@@ -8,130 +8,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-    font-family:Montserrat;
-    background:#0b0b0b;
-    color:#fff;
-}
-
-nav{
-    position:fixed;
-    width:100%;
-    background:#000;
-    padding:15px;
-    text-align:center;
-    z-index:1000;
-}
-nav a{
-    color:#d4af37;
-    margin:0 15px;
-    text-decoration:none;
-}
-
-header{
-    height:100vh;
-    background:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0') center/cover;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-}
-
-.logo{
-    font-family:'Playfair Display';
-    font-size:70px;
-    color:#d4af37;
-}
-
-h1{margin:10px}
-
-section{
-    padding:90px 10%;
-}
-
-h2{
-    color:#d4af37;
-    margin-bottom:20px;
-}
-
-.menu{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:#111;
-    border-radius:10px;
-    overflow:hidden;
-    transition:.3s;
-}
-.card:hover{
-    transform:scale(1.05);
-}
-
-.card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
-
-.card-content{
-    padding:15px;
-}
-
-.price{
-    color:#d4af37;
-}
-
-button{
-    margin-top:10px;
-    padding:10px;
-    width:100%;
-    border:none;
-    background:#d4af37;
-    cursor:pointer;
-}
-
-#carrito{
-    margin-top:20px;
-    background:#111;
-    padding:15px;
-    border-radius:10px;
-}
-
-.galeria{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
-}
-.galeria img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
-
-form input{
-    width:100%;
-    padding:10px;
-    margin:10px 0;
-    background:#111;
-    border:none;
-    color:#fff;
-}
-
-form button{
-    background:#d4af37;
-}
-
-footer{
-    text-align:center;
-    padding:20px;
-    background:#000;
-}
+body{margin:0;font-family:Montserrat;background:#0b0b0b;color:#fff}
+nav{position:fixed;width:100%;background:#000;padding:15px;text-align:center}
+nav a{color:#d4af37;margin:0 15px;text-decoration:none}
+header{height:100vh;background:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0') center/cover;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.logo{font-family:Playfair Display;font-size:60px;color:#d4af37}
+section{padding:80px 10%}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:#111;border-radius:10px;overflow:hidden}
+.card img{width:100%;height:200px;object-fit:cover}
+.card-content{padding:15px}
+.price{color:#d4af37}
+button{padding:10px;background:#d4af37;border:none;cursor:pointer;width:100%;margin-top:10px}
+#carrito{margin-top:20px;background:#111;padding:15px}
 </style>
 </head>
 
@@ -139,14 +28,12 @@ footer{
 
 <nav>
 <a href="#menu">Menú</a>
-<a href="#galeria">Galería</a>
 <a href="#reserva">Reservar</a>
 </nav>
 
 <header>
 <div class="logo">ME</div>
 <h1>Maison Estrada</h1>
-<p>Lujo · Elegancia · Experiencia</p>
 </header>
 
 <section id="menu">
@@ -154,7 +41,7 @@ footer{
 
 <div class="menu">
 
-<!-- COMIDA -->
+<!-- COMIDAS -->
 <div class="card">
 <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
 <div class="card-content">
@@ -182,6 +69,33 @@ footer{
 </div>
 </div>
 
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141">
+<div class="card-content">
+<h3>Pollo Gourmet</h3>
+<p class="price">$26</p>
+<button onclick="add('Pollo',26)">Agregar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1605478371310-a9f1e96b4ff4">
+<div class="card-content">
+<h3>Costillas BBQ</h3>
+<p class="price">$35</p>
+<button onclick="add('Costillas',35)">Agregar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38">
+<div class="card-content">
+<h3>Pizza Artesanal</h3>
+<p class="price">$22</p>
+<button onclick="add('Pizza',22)">Agregar</button>
+</div>
+</div>
+
 <!-- POSTRES -->
 <div class="card">
 <img src="https://images.unsplash.com/photo-1505253216365-76d9d0e0c8e3">
@@ -198,6 +112,24 @@ footer{
 <h3>Helado</h3>
 <p class="price">$10</p>
 <button onclick="add('Helado',10)">Agregar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061">
+<div class="card-content">
+<h3>Postre Deluxe</h3>
+<p class="price">$15</p>
+<button onclick="add('Postre',15)">Agregar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1514516870926-206f54f6e2e9">
+<div class="card-content">
+<h3>Tiramisú</h3>
+<p class="price">$13</p>
+<button onclick="add('Tiramisu',13)">Agregar</button>
 </div>
 </div>
 
@@ -220,58 +152,50 @@ footer{
 </div>
 </div>
 
+<div class="card">
+<img src="https://images.unsplash.com/photo-1514361892635-cebb1c3f08e3">
+<div class="card-content">
+<h3>Cóctel</h3>
+<p class="price">$18</p>
+<button onclick="add('Coctel',18)">Agregar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1497534446932-c925b458314e">
+<div class="card-content">
+<h3>Café</h3>
+<p class="price">$8</p>
+<button onclick="add('Cafe',8)">Agregar</button>
+</div>
+</div>
+
 </div>
 
 <div id="carrito">
-<h3>Carrito 🛒</h3>
+<h3>Carrito</h3>
 <ul id="lista"></ul>
 <p>Total: $<span id="total">0</span></p>
 </div>
 
 </section>
 
-<section id="galeria">
-<h2>Galería</h2>
-<div class="galeria">
-<img src="https://images.unsplash.com/photo-1551218808-94e220e084d2">
-<img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1">
-<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
-</div>
-</section>
-
 <section id="reserva">
 <h2>Reservación</h2>
-
-<form onsubmit="reservar(event)">
+<form onsubmit="res(event)">
 <input type="text" placeholder="Nombre" required>
 <input type="date" required>
 <input type="time" required>
 <input type="number" placeholder="Personas" required>
-<button>Confirmar</button>
+<button>Reservar</button>
 </form>
-
 <p id="msg"></p>
 </section>
 
-<footer>
-<p>© 2026 Maison Estrada</p>
-</footer>
-
 <script>
 let total=0;
-
-function add(nombre,precio){
-    let li=document.createElement('li');
-    li.textContent=nombre+" - $"+precio;
-    document.getElementById('lista').appendChild(li);
-    total+=precio;
-    document.getElementById('total').textContent=total;
-}
-
-function reservar(e){
-    e.preventDefault();
-    document.getElementById('msg').textContent="Reservación confirmada ✔️";
-}
+function add(n,p){let li=document.createElement('li');li.textContent=n+' $'+p;document.getElementById('lista').appendChild(li);total+=p;document.getElementById('total').textContent=total}
+function res(e){e.preventDefault();document.getElementById('msg').textContent='Reservación confirmada'}
 </script>
 
 </body>
