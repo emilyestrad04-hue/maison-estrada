@@ -1,61 +1,59 @@
 <!DOCTYPE html><html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maison Estrada | Fine Dining</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet"><style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Montserrat',sans-serif;background:#0b0b0b;color:#fff;scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:#0b0b0b;color:#fff}
 
-nav{position:fixed;top:0;width:100%;background:rgba(0,0,0,.9);display:flex;justify-content:center;gap:25px;padding:14px;z-index:1000}
-nav a{color:#d4af37;text-decoration:none;font-size:14px}
-nav a:hover{color:#fff}
+nav{position:fixed;top:0;width:100%;background:#000;padding:15px;display:flex;justify-content:center;gap:25px;z-index:1000}
+nav a{color:#d4af37;text-decoration:none}
 
-header{height:100vh;background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0');background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
-.logo{font-family:'Playfair Display',serif;font-size:4rem;color:#d4af37}
-.sub{margin-top:10px;color:#ccc}
-.btn{margin:10px;padding:12px 25px;border:1px solid #d4af37;background:none;color:#d4af37;cursor:pointer}
+header{height:100vh;background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0');background-size:cover;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.logo{font-family:'Playfair Display';font-size:5rem;color:#d4af37}
+.sub{color:#ccc;margin:10px}
+.btn{padding:10px 20px;margin:5px;border:1px solid #d4af37;background:none;color:#d4af37;cursor:pointer}
 .btn:hover{background:#d4af37;color:#000}
 
-section{padding:100px 10%}
-h2{color:#d4af37;margin-bottom:25px}
+section{padding:90px 10%}
+h2{color:#d4af37;margin-bottom:20px}
 
-.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
-
-.card{background:#111;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;transition:.3s}
-.card:hover{transform:translateY(-5px);box-shadow:0 0 20px rgba(212,175,55,.3)}
-
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:#111;border-radius:10px;overflow:hidden}
 .card img{width:100%;height:200px;object-fit:cover}
-
 .card-content{padding:15px}
-.card h3{margin-bottom:5px}
-.price{color:#d4af37;margin-bottom:10px}
+.price{color:#d4af37}
 
-.card button{padding:10px;border:none;background:#d4af37;color:#000;cursor:pointer;border-radius:5px}
-
-#carrito{background:#111;padding:20px;margin-top:30px;border-radius:12px}
-
-#filtro{padding:12px;width:100%;margin-bottom:20px;border-radius:6px;border:none}
+#carrito{background:#111;padding:15px;margin-top:20px;border-radius:10px}
 
 .galeria{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
-.galeria img{width:100%;height:200px;object-fit:cover;border-radius:10px}
+.galeria img{width:100%;height:200px;object-fit:cover}
+
+form input{width:100%;padding:10px;margin:10px 0;background:#111;border:none;color:#fff}
+form button{width:100%;padding:10px;background:#d4af37;border:none;cursor:pointer}
 
 footer{text-align:center;padding:20px;background:#000;color:#777}
-
 </style></head><body><nav>
 <a href="#">Inicio</a>
 <a href="#menu">Menú</a>
 <a href="#galeria">Galería</a>
 <a href="#reserva">Reservas</a>
 </nav><header>
-<div class="logo">Maison Estrada</div>
-<p class="sub">Experiencia gourmet de lujo</p>
-<button class="btn" onclick="scrollToSection('menu')">Ver Menú</button>
-<button class="btn" onclick="scrollToSection('reserva')">Reservar</button>
+<div class="logo">ME</div>
+<h1>Maison Estrada</h1>
+<p class="sub">Lujo · Elegancia · Experiencia</p>
+<button class="btn" onclick="scrollTo('menu')">Menú</button>
+<button class="btn" onclick="scrollTo('reserva')">Reservar</button>
 </header><section id="menu">
-<h2>Menú Gourmet</h2>
-<input id="filtro" placeholder="Buscar..." onkeyup="filtrar()"><div class="menu"><div class="card"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"><div class="card-content"><h3>Wagyu Premium</h3><p class="price">$45</p><button onclick="agregarCarrito('Wagyu',45)">Agregar</button></div></div><div class="card"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe"><div class="card-content"><h3>Pasta Trufa</h3><p class="price">$30</p><button onclick="agregarCarrito('Pasta',30)">Agregar</button></div></div><div class="card"><img src="https://images.unsplash.com/photo-1559847844-5315695dadae"><div class="card-content"><h3>Salmón Gourmet</h3><p class="price">$28</p><button onclick="agregarCarrito('Salmon',28)">Agregar</button></div></div><div class="card"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061"><div class="card-content"><h3>Postre Deluxe</h3><p class="price">$15</p><button onclick="agregarCarrito('Postre',15)">Agregar</button></div></div><div class="card"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307"><div class="card-content"><h3>Jugo Natural</h3><p class="price">$7</p><button onclick="agregarCarrito('Jugo',7)">Agregar</button></div></div><div class="card"><img src="https://images.unsplash.com/photo-1544145945-f90425340c7e"><div class="card-content"><h3>Vino Tinto</h3><p class="price">$20</p><button onclick="agregarCarrito('Vino',20)">Agregar</button></div></div></div><div id="carrito">
-<h3>Carrito 🛒</h3>
+<h2>Menú</h2>
+<div class="menu"><div class="card"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"><div class="card-content"><h3>Wagyu</h3><p class="price">$45</p><button onclick="add('Wagyu',45)">Agregar</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe"><div class="card-content"><h3>Pasta</h3><p class="price">$30</p><button onclick="add('Pasta',30)">Agregar</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1559847844-5315695dadae"><div class="card-content"><h3>Salmón</h3><p class="price">$28</p><button onclick="add('Salmon',28)">Agregar</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061"><div class="card-content"><h3>Postre</h3><p class="price">$15</p><button onclick="add('Postre',15)">Agregar</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307"><div class="card-content"><h3>Jugo</h3><p class="price">$7</p><button onclick="add('Jugo',7)">Agregar</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1544145945-f90425340c7e"><div class="card-content"><h3>Vino</h3><p class="price">$20</p><button onclick="add('Vino',20)">Agregar</button></div></div></div><div id="carrito">
+<h3>Carrito</h3>
 <ul id="lista"></ul>
 <p>Total: $<span id="total">0</span></p>
 </div>
@@ -73,16 +71,15 @@ footer{text-align:center;padding:20px;background:#000;color:#777}
 <input type="date" required>
 <input type="time" required>
 <input type="number" placeholder="Personas" required>
-<button>Reservar</button>
+<button>Confirmar</button>
 </form>
-<p id="mensaje"></p>
+<p id="msg"></p>
 </section><footer>
 <p>© 2026 Maison Estrada</p>
 </footer><script>
 let total=0;
-function agregarCarrito(n,p){let l=document.getElementById('lista');let i=document.createElement('li');i.textContent=n+' - $'+p;l.appendChild(i);total+=p;document.getElementById('total').textContent=total}
-function reservar(e){e.preventDefault();document.getElementById('mensaje').textContent='Reservación confirmada'}
-function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
-function filtrar(){let input=document.getElementById('filtro').value.toLowerCase();document.querySelectorAll('.card').forEach(c=>{c.style.display=c.innerText.toLowerCase().includes(input)?'block':'none'})}
+function add(n,p){let li=document.createElement('li');li.textContent=n+' - $'+p;document.getElementById('lista').appendChild(li);total+=p;document.getElementById('total').textContent=total}
+function reservar(e){e.preventDefault();document.getElementById('msg').textContent='Reservación confirmada'}
+function scrollTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
 </script></body>
 </html>
