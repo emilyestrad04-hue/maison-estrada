@@ -51,10 +51,95 @@ footer{text-align:center;padding:25px;background:#000;color:#777}
 <h2>Menú Gourmet</h2>
 <input id="filtro" placeholder="Buscar platillo..." onkeyup="filtrar()">
 <div class="menu">
-<div class="card"><img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"><h3>Wagyu Premium</h3><p class="price">$45</p><button onclick="agregarCarrito('Wagyu',45)">Agregar</button></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe"><h3>Pasta Trufa</h3><p class="price">$30</p><button onclick="agregarCarrito('Pasta',30)">Agregar</button></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1559847844-5315695dadae"><h3>Salmón Gourmet</h3><p class="price">$28</p><button onclick="agregarCarrito('Salmón',28)">Agregar</button></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061"><h3>Postre Deluxe</h3><p class="price">$15</p><button onclick="agregarCarrito('Postre',15)">Agregar</button></div>
+<div class="menu">
+
+<!-- ENTRADAS -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1544025162-d76694265947">
+<h3>Bruschetta</h3>
+<p class="price">$12</p>
+<button onclick="agregarCarrito('Bruschetta',12)">Agregar</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
+<h3>Ensalada César</h3>
+<p class="price">$14</p>
+<button onclick="agregarCarrito('Ensalada',14)">Agregar</button>
+</div>
+
+<!-- PLATOS FUERTES -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+<h3>Wagyu Premium</h3>
+<p class="price">$45</p>
+<button onclick="agregarCarrito('Wagyu',45)">Agregar</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe">
+<h3>Pasta Trufa</h3>
+<p class="price">$30</p>
+<button onclick="agregarCarrito('Pasta',30)">Agregar</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1559847844-5315695dadae">
+<h3>Salmón Gourmet</h3>
+<p class="price">$28</p>
+<button onclick="agregarCarrito('Salmón',28)">Agregar</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141">
+<h3>Pollo a la Parrilla</h3>
+<p class="price">$26</p>
+<button onclick="agregarCarrito('Pollo',26)">Agregar</button>
+</div>
+
+<!-- POSTRES -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505253216365-76d9d0e0c8e3">
+<h3>Cheesecake</h3>
+<p class="price">$12</p>
+<button onclick="agregarCarrito('Cheesecake',12)">Agregar</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb">
+<h3>Helado Artesanal</h3>
+<p class="price">$10</p>
+<button onclick="agregarCarrito('Helado',10)">Agregar</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1514516870926-206f54f6e2e9">
+<h3>Tiramisú</h3>
+<p class="price">$13</p>
+<button onclick="agregarCarrito('Tiramisu',13)">Agregar</button>
+</div>
+
+<!-- BEBIDAS -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1551024506-0bccd828d307">
+<h3>Jugo Natural</h3>
+<p class="price">$7</p>
+<button onclick="agregarCarrito('Jugo',7)">Agregar</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1544145945-f90425340c7e">
+<h3>Vino Reserva</h3>
+<p class="price">$20</p>
+<button onclick="agregarCarrito('Vino',20)">Agregar</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1514361892635-cebb1c3f08e3">
+<h3>Cóctel Premium</h3>
+<p class="price">$18</p>
+<button onclick="agregarCarrito('Coctel',18)">Agregar</button>
+</div>
 </div><div id="carrito">
 <h3>Carrito 🛒</h3>
 <ul id="lista"></ul>
